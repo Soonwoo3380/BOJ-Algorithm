@@ -1,4 +1,7 @@
-# [Bronze III] 웰컴 키트 - 30802 
+# [Bronze III] 웰컴 키트 - 30802
+
+### 💡 오답 노트 💡
+- **조건 순서 유의**
 
 [문제 링크](https://www.acmicpc.net/problem/30802) 
 
