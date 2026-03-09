@@ -2,6 +2,19 @@
 
 [문제 링크](https://www.acmicpc.net/problem/1181) 
 
+### 💡 오답 노트 💡
+
+#### 처음에 헤맨 이유
+- dict에 대한 낮은 숙련
+  
+#### 해결방법:
+- dict
+	- .items()
+	- sorted( , key=)
+ 	- lambda x
+  	- .add()
+  	- .strip()
+
 ### 성능 요약
 
 메모리: 37532 KB, 시간: 80 ms
