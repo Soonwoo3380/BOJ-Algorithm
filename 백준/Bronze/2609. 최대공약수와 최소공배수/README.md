@@ -8,7 +8,13 @@
 - 두 수의 공약수는 두 수 중에서 가장 작은 수의 범위로 반복문으로 풀면 풀림
 - 최대공배수는 유클리드 호제법인 Greatest Common Divisor로 풀면 풀림.
  - '두 수의 최대공배수는 큰 수를 작은 수로 나눈 나머지와 작은 수의 최대공배수와 같다.
- - $\gcd(a, b) = \gcd(b, a \% b)$
+ - Euclidean Algorithm:
+
+$$
+\gcd(a, b) = \gcd(b, a \% b)
+$$
+
+where \( a \% b \) is the remainder of \( a \) divided by \( b \).
 
 ### 성능 요약
 
