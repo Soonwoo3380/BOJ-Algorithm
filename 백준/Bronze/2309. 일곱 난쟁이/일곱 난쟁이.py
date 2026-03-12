@@ -1,17 +1,28 @@
 import sys
 input = sys.stdin.readline
 
-dwarfs = []
+dwarfs = [int(input()) for _ in range(9)]
+dwarfs.sort()
 
-for _ in range(9):
-    dwarfs.append(int(input()))
+result = []
 
-from itertools import combinations
+found = False
 
-dwarfs_7 = [comb for comb in combinations(dwarfs, 7)]
-result = [sum(comb) for comb in dwarfs_7]
+def combi(start, chosen):
+    global found
+    if found:
+        return
 
-idx = [i for i in range(len(result)) if result[i] == 100][0]
+    if len(chosen) == 7:
+        if sum(chosen) == 100:
+            for num in chosen:
+                print(num)
+            found = True
+        return
+    
+    for i in range(start, 9):
+        chosen.append(dwarfs[i])
+        combi(i+1, chosen)
+        chosen.pop()
 
-for num in sorted(dwarfs_7[idx]):
-    print(num)
+combi(0, [])
