@@ -1,14 +1,20 @@
-N, M = map(int, input().split())
-number_list = [i for i in range(1, N+1)]
+import sys
+input = sys.stdin.readline
 
-def wow(m, start, chosen):
+N, M = map(int, input().split())
+numbers = [num for num in range(1, N+1)]
+visited = [False] * N
+def comb(m, chosen, start):
     if len(chosen) == m:
         print(*chosen)
         return
+    
+    for i in range(start, len(numbers)):
+        if not visited[i]:
+            visited[i] = True
+            chosen.append(numbers[i])
+            comb(m, chosen, i)
+            chosen.pop()
+            visited[i] = False
 
-    for k in range(start, len(number_list)):
-        chosen.append(number_list[k])
-        wow(m, k+1, chosen)
-        chosen.pop()
-
-wow(M, 0, [])
+comb(M, [], 0) 
